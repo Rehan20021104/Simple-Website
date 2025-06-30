@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Store | Handmade Crafts</title>
+    <style>
+        /* General Styles */
+        html, body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 100%;
+    }
+
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1.5rem;
+    }
+
+    .navbar ul li a {
+      color: #333;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s, background-color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      color: #007bff;
+      background-color: rgba(0, 123, 255, 0.1);
+      border-radius: 5px;
+    }
+
+    .navbar-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .container {
+      flex: 1;
+      padding: 2rem;
+    }
+  
+  
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background: linear-gradient(to bottom right, #fff, #e6f7ff);
+  }
+  
+  .hero .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #007bff;
+  }
+  
+  .hero .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: #007bff;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .hero .btn:hover {
+    background: #0056b3;
+  }
+  /* About Section Styles */
+  .about {
+    background: #f1faff;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .about-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  .about-images {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-values {
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+
+  .about-values h3 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+  }
+
+  .about-values ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.1rem;
+  }
+
+  .about-values ul li {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .about-values ul li i {
+    margin-right: 0.8rem;
+    color: #28a745;
+  }
+
+  .team-section {
+    margin-top: 3rem;
+  }
+
+  .team-section h3 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 2rem;
+  }
+
+  .team-members {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .team-member {
+    text-align: center;
+  }
+
+  .team-member .team-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .team-member h4 {
+    font-size: 1.2rem;
+    color: #333;
+  }
+
+  .team-member p {
+    color: #777;
+    font-size: 1rem;
+  }
+  /* Categories Section */
+  .categories .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .category-card {
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .category-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Products Section */
+  .products .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .product-card {
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .product-card .btn {
+    margin-top: 1rem;
+    background: #28a745;
+  }
+  
+  .product-card .btn:hover {
+    background: #218838;
+  }
+  
+  /* Testimonials */
+  .testimonials {
+    background: #e6f7ff;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .testimonial-card {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonial-card h4 {
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  .newsletter {
+  background-color: #2a8ded;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.newsletter-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.newsletter-form input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  width: 70%;
+}
+
+.newsletter-form button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #121315;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+  background-color: #333;
+}
+    footer {
+    background-color: #121315;
+    color: #fff;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    margin-top: auto;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section {
+    flex: 1 1 200px;
+    min-width: 250px;
+  }
+
+  .footer-section.logo img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer-section h3 {
+    color: #2a8ded;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .footer-section ul li a:hover {
+    color: #2a8ded;
+  }
+
+  .footer-section.contact p {
+    line-height: 1.6;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+    }
+
+    .footer-section {
+      min-width: 100%;
+    }
+  }
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        cursor: pointer;
+      }
+  
+      </style>
+    </head>
+    <body>
+       <!-- Header Start -->
+       <header class="header">
+        <div class="container">
+          <div class="header-content">
+            <a href="index.html" class="logo">
+              <img src="images/logo.png" alt="Online Store" style="height: 50px;" />
+            </a>
+            <nav class="navbar">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="workshop.html">Workshop</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </nav>
+            <div class="navbar-icons">
+              <a href="cart.html"><img src="images/shopping.png" alt="Shopping Cart" class="icon" /></a>
+              <a href="login.html"><img src="images/user.png" alt="User Account" class="icon" /></a>
+            </div>
+          </div>
+        </div>
+      </header>
+      
+      <!-- Header End -->
+
+     <!-- About Section Start -->
+<section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <h2 class="section-title">About Us</h2>
+        <p class="about-description">
+          Welcome to our store, where every item tells a story. We specialize in
+          unique, handmade products, crafted with passion and attention to detail.
+          Established in 2017, our goal is to bring our customers the highest
+          quality goods, made with love and care.
+        </p>
+        <div class="about-images">
+          <img src="images/1400954239313.webp" alt="Handmade Craft 1" class="about-img" />
+          <img src="images/1400953027722.webp" alt="Handmade Craft 2" class="about-img" />
+        </div>
+        <div class="about-values">
+          <h3>Our Values</h3>
+          <ul>
+            <li><i class="fas fa-heart"></i> Passion for Craftsmanship</li>
+            <li><i class="fas fa-leaf"></i> Sustainable Materials</li>
+            <li><i class="fas fa-thumbs-up"></i> Customer Satisfaction</li>
+          </ul>
+        </div>
+        <div class="team-section">
+          <h3>Meet Our Team</h3>
+          <div class="team-members">
+            <div class="team-member">
+              <img src="images/people/2.png" alt="Team Member 1" class="team-img" />
+              <h4>Kim Taehyung</h4>
+              <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+              <img src="images/people/1.png" alt="Team Member 2" class="team-img" />
+              <h4>Park Ji-min</h4>
+              <p>Creative Director</p>
+            </div>
+            <div class="team-member">
+              <img src="images/people/3.png" alt="Team Member 3" class="team-img" />
+              <h4>Jeon Jung-kook</h4>
+              <p>Operations Manager</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Section End -->
+  <section class="newsletter">
+    <div class="newsletter-container">
+      <h2>Subscribe Now</h2>
+      <p>Get the latest updates and exclusive offers straight to your inbox!</p>
+      <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+        <input type="email" placeholder="Enter your email address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section logo">
+        <img src="images/logo.png" alt="Shop Logo" style="max-width: 150px;" />
+      </div>
+      <div class="footer-section quick-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#faq">F.A.Q</a></li>
+          <li><a href="#cookies-policy">Cookies Policy</a></li>
+          <li><a href="#terms-of-services">Terms Of Service</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#careers">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-section contact">
+        <h3>Contact Us</h3>
+        <p>
+          <strong>Phone:</strong> +94 740 686 392<br />
+          <strong>Email:</strong> reeha@domain.com<br />
+          <strong>Address:</strong> No:230/4b, Matale Road, Akurana, Sri Lanka
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Ms. Reeha | All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

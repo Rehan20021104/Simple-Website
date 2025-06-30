@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workshop | Handmade Crafts</title>
+    <style>
+      /* General Styles */
+      html, body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1.5rem;
+    }
+
+    .navbar ul li a {
+      color: #333;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s, background-color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      color: #007bff;
+      background-color: rgba(0, 123, 255, 0.1);
+      border-radius: 5px;
+    }
+
+    .navbar-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .container {
+      flex: 1;
+      padding: 2rem;
+    }
+
+    .notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    animation: fadeIn 0.3s, fadeOut 0.3s 2.7s;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+
+      /* Workshops Section */
+      .workshops {
+        padding: 2rem;
+        background: #e6f7ff;
+      }
+
+      .workshops h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #007bff;
+        margin-bottom: 2rem;
+      }
+
+      .workshop-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .workshop-card {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .workshop-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .workshop-card img {
+        width: 100%;
+        height: 55%;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+      }
+
+      .workshop-card h3 {
+        font-size: 1.6rem;
+        color: #007bff;
+      }
+
+      .workshop-card p {
+        font-size: 1rem;
+        margin: 1rem 0;
+      }
+
+      .workshop-card .btn {
+        background: #28a745;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: background-color 0.3s;
+      }
+
+      .workshop-card .btn:hover {
+        background: #218838;
+      }
+
+      .newsletter {
+  background-color: #2a8ded;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.newsletter-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.newsletter-form input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  width: 70%;
+}
+
+.newsletter-form button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #121315;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+  background-color: #333;
+}
+    footer {
+    background-color: #121315;
+    color: #fff;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    margin-top: auto;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section {
+    flex: 1 1 200px;
+    min-width: 250px;
+  }
+
+  .footer-section.logo img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer-section h3 {
+    color: #2a8ded;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .footer-section ul li a:hover {
+    color: #2a8ded;
+  }
+
+  .footer-section.contact p {
+    line-height: 1.6;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+    }
+
+    .footer-section {
+      min-width: 100%;
+    }
+  }
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Online Store" style="height: 50px;" />
+          </a>
+          <nav class="navbar">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="product.html">Products</a></li>
+              <li><a href="workshop.html">Workshop</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="navbar-icons">
+            <a href="cart.html"><img src="images/shopping.png" alt="Shopping Cart" class="icon" /></a>
+            <a href="login.html"><img src="images/user.png" alt="User Account" class="icon" /></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Workshops Section Start -->
+    <section class="workshops">
+      <h2>Upcoming Workshops</h2>
+      <div class="workshop-cards">
+        <!-- Workshop Card 1 -->
+        <div class="workshop-card">
+          <img src="images/1599839180621.webp" alt="Workshop 1" />
+          <h3>Pottery Making</h3>
+          <p>Learn the basics of pottery, including shaping, glazing, firing techniques, and creative design.</p>
+          <p><strong>Date:</strong> 10th January 2024</p>
+          <p><strong>Time:</strong> 10:00 AM - 1:00 PM</p>
+          <p><strong>Conductor:</strong> Sarah Johnson</p>
+          <p><strong>Available Seats:</strong> 15</p>
+          <p><strong>Price:</strong> $50</p>
+          <button class="btn" onclick="showNotification('You have successfully joined the Pottery Making workshop!')">Join Now</button>
+        </div>
+        <!-- Workshop Card 2 -->
+        <div class="workshop-card">
+          <img src="images/1400979006118.webp" alt="Workshop 2" />
+          <h3>Woodworking for Beginners</h3>
+          <p>Get hands-on experience in woodworking and create your own project to take home!</p>
+          <p><strong>Date:</strong> 12th January 2024</p>
+          <p><strong>Time:</strong> 2:00 PM - 5:00 PM</p>
+          <p><strong>Conductor:</strong> Michael Smith</p>
+          <p><strong>Available Seats:</strong> 10</p>
+          <p><strong>Price:</strong> $60</p>
+          <button class="btn" onclick="showNotification('You have successfully joined the Woodworking workshop!')">Join Now</button>
+        </div>
+        <!-- Workshop Card 3 -->
+        <div class="workshop-card">
+          <img src="images/1724172728059.webp" alt="Workshop 3" />
+          <h3>Painting with Acrylics</h3>
+          <p>Explore the world of acrylic painting with guided lessons and step-by-step techniques.</p>
+          <p><strong>Date:</strong> 15th January 2024</p>
+          <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
+          <p><strong>Conductor:</strong> Emily Davis</p>
+          <p><strong>Available Seats:</strong> 20</p>
+          <p><strong>Price:</strong> $40</p>
+          <button class="btn" onclick="showNotification('You have successfully joined the Painting with Acrylics workshop!')">Join Now</button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Workshops Section End -->
+
+    <section class="newsletter">
+      <div class="newsletter-container">
+        <h2>Subscribe Now</h2>
+        <p>Get the latest updates and exclusive offers straight to your inbox!</p>
+        <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+          <input type="email" placeholder="Enter your email address" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+    
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section logo">
+          <img src="images/logo.png" alt="Shop Logo" style="max-width: 150px;" />
+        </div>
+        <div class="footer-section quick-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#faq">F.A.Q</a></li>
+            <li><a href="#cookies-policy">Cookies Policy</a></li>
+            <li><a href="#terms-of-services">Terms Of Service</a></li>
+            <li><a href="#support">Support</a></li>
+            <li><a href="#careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h3>Contact Us</h3>
+          <p>
+            <strong>Phone:</strong> +94 740 686 392<br />
+            <strong>Email:</strong> reeha@domain.com<br />
+            <strong>Address:</strong> No:230/4b, Matale Road, Akurana, Sri Lanka
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Ms. Reeha | All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script>
+      function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'notification';
+        notification.textContent = message;
+    
+        document.body.appendChild(notification);
+    
+        setTimeout(() => {
+          notification.remove();
+        }, 3000); // Notification disappears after 3 seconds
+      }
+    </script>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Online Store</title>
+    <style>
+      /* General Styles */
+      html, body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1.5rem;
+    }
+
+    .navbar ul li a {
+      color: #333;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s, background-color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      color: #007bff;
+      background-color: rgba(0, 123, 255, 0.1);
+      border-radius: 5px;
+    }
+
+    .navbar-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .container {
+      flex: 1;
+      padding: 2rem;
+    }
+.contact-details {
+  margin-bottom: 2rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.contact-details h3 {
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+.contact-details p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+      /* Contact Section */
+      .contact-section {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        background-color: #e6f7ff;
+      }
+
+      .contact-container {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 800px;
+        padding: 2rem;
+      }
+
+      .contact-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .contact-header h2 {
+        font-size: 2rem;
+        color: #007bff;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        background-color: #f9f9f9;
+      }
+
+      .contact-form textarea {
+        resize: none;
+        height: 150px;
+      }
+
+      .contact-form button {
+        padding: 0.75rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .contact-form button:hover {
+        background-color: #0056b3;
+      }
+
+      .newsletter {
+  background-color: #2a8ded;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.newsletter-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.newsletter-form input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  width: 70%;
+}
+
+.newsletter-form button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #121315;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+  background-color: #333;
+}
+    footer {
+    background-color: #121315;
+    color: #fff;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    margin-top: auto;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section {
+    flex: 1 1 200px;
+    min-width: 250px;
+  }
+
+  .footer-section.logo img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer-section h3 {
+    color: #2a8ded;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .footer-section ul li a:hover {
+    color: #2a8ded;
+  }
+
+  .footer-section.contact p {
+    line-height: 1.6;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+    }
+
+    .footer-section {
+      min-width: 100%;
+    }
+  }
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Online Store" style="height: 50px;" />
+          </a>
+          <nav class="navbar">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="product.html">Products</a></li>
+              <li><a href="workshop.html">Workshop</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="navbar-icons">
+            <a href="cart.html"><img src="images/shopping.png" alt="Shopping Cart" class="icon" /></a>
+            <a href="login.html"><img src="images/user.png" alt="User Account" class="icon" /></a>
+          </div>
+        </div>
+      </div>
+    </header>
+      
+      <!-- Header End -->
+      <div class="contact-details">
+        <h3>Contact Information</h3>
+        <p><strong>Address:</strong> No:230/4b, Matale Road, Akurana, Sri Lanka</p>
+        <p><strong>Phone:</strong> +94 740 686 392</p>
+        <p><strong>Email:</strong> reeha@domain.com</p>
+        <h3>Find Us Here</h3>
+        <div style="border: 1px solid #ccc; border-radius: 10px; overflow: hidden;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.826643676236!2d80.61792369999999!3d7.373318299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3680ec161138d%3A0x4c48bf664cc2e602!2sMatale%20Rd%2C%20Sri%20Lanka!5e0!3m2!1sen!2ssg!4v1734780975678!5m2!1sen!2ssg"
+            width="100%"
+            height="300%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+      
+    <!-- Contact Section Start -->
+    <section class="contact-section">
+      <div class="contact-container">
+        <div class="contact-header">
+          <h2>We'd Love to Hear From You</h2>
+          <p>Please fill out the form below, and our team will get back to you shortly.</p>
+        </div>
+        <form class="contact-form">
+          <input type="text" name="name" placeholder="Your Full Name" required />
+          <input type="email" name="email" placeholder="Your Email Address" required />
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <section class="newsletter">
+      <div class="newsletter-container">
+        <h2>Subscribe Now</h2>
+        <p>Get the latest updates and exclusive offers straight to your inbox!</p>
+        <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+          <input type="email" placeholder="Enter your email address" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+    
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section logo">
+          <img src="images/logo.png" alt="Shop Logo" style="max-width: 150px;" />
+        </div>
+        <div class="footer-section quick-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#faq">F.A.Q</a></li>
+            <li><a href="#cookies-policy">Cookies Policy</a></li>
+            <li><a href="#terms-of-services">Terms Of Service</a></li>
+            <li><a href="#support">Support</a></li>
+            <li><a href="#careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h3>Contact Us</h3>
+          <p>
+            <strong>Phone:</strong> +94 740 686 392<br />
+            <strong>Email:</strong> reeha@domain.com<br />
+            <strong>Address:</strong> No:230/4b, Matale Road, Akurana, Sri Lanka
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Ms. Reeha | All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

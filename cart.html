@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <style>
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1.5rem;
+    }
+
+    .navbar ul li a {
+      color: #333;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s, background-color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      color: #007bff;
+      background-color: rgba(0, 123, 255, 0.1);
+      border-radius: 5px;
+    }
+
+    .navbar-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .container {
+      flex: 1;
+      padding: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 1rem;
+      text-align: left;
+    }
+
+    .credit-card-form {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .credit-card-form h2 {
+      color: #007bff;
+      margin-bottom: 1rem;
+    }
+
+    .credit-card-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .credit-card-form label {
+      font-weight: bold;
+    }
+
+    .credit-card-form input {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .credit-card-form button {
+      padding: 0.75rem;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .credit-card-form button:hover {
+      background-color: #218838;
+    }
+
+    .newsletter {
+  background-color: #2a8ded;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.newsletter-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.newsletter-form input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  width: 70%;
+}
+
+.newsletter-form button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #121315;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+  background-color: #333;
+}
+    footer {
+    background-color: #121315;
+    color: #fff;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    margin-top: auto;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section {
+    flex: 1 1 200px;
+    min-width: 250px;
+  }
+
+  .footer-section.logo img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer-section h3 {
+    color: #2a8ded;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .footer-section ul li a:hover {
+    color: #2a8ded;
+  }
+
+  .footer-section.contact p {
+    line-height: 1.6;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+    }
+
+    .footer-section {
+      min-width: 100%;
+    }
+  }
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        cursor: pointer;
+      }
+  </style>
+</head>
+<body>
+  <!-- Header Start -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="Online Store" style="height: 50px;" />
+        </a>
+        <nav class="navbar">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="workshop.html">Workshop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="navbar-icons">
+          <a href="cart.html"><img src="images/shopping.png" alt="Shopping Cart" class="icon" /></a>
+          <a href="login.html"><img src="images/user.png" alt="User Account" class="icon" /></a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header End -->
+
+  <div class="container">
+    <h1>Your Cart</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="cartItems"></tbody>
+    </table>
+    <p class="total" id="totalPrice"></p>
+
+    <div class="credit-card-form">
+      <h2>Enter Your Payment Details</h2>
+      <form id="paymentForm">
+        <label for="cardName">Name on Card:</label>
+        <input type="text" id="cardName" name="cardName" placeholder="John Doe" required />
+
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required maxlength="19" />
+
+        <label for="expiryDate">Expiry Date:</label>
+        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required maxlength="5" />
+
+        <label for="cvv">CVV:</label>
+        <input type="password" id="cvv" name="cvv" placeholder="123" required maxlength="3" />
+
+        <button type="submit">Pay Now</button>
+      </form>
+    </div>
+  </div>
+  <section class="newsletter">
+    <div class="newsletter-container">
+      <h2>Subscribe Now</h2>
+      <p>Get the latest updates and exclusive offers straight to your inbox!</p>
+      <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+        <input type="email" placeholder="Enter your email address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section logo">
+        <img src="images/logo.png" alt="Shop Logo" style="max-width: 150px;" />
+      </div>
+      <div class="footer-section quick-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#faq">F.A.Q</a></li>
+          <li><a href="#cookies-policy">Cookies Policy</a></li>
+          <li><a href="#terms-of-services">Terms Of Service</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#careers">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-section contact">
+        <h3>Contact Us</h3>
+        <p>
+          <strong>Phone:</strong> +94 740 686 392<br />
+          <strong>Email:</strong> reeha@domain.com<br />
+          <strong>Address:</strong> No:230/4b, Matale Road, Akurana, Sri Lanka
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Ms. Reeha | All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function loadCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItems = document.getElementById('cartItems');
+      const totalPriceElement = document.getElementById('totalPrice');
+      cartItems.innerHTML = '';
+      let totalPrice = 0;
+
+      cart.forEach((item, index) => {
+        totalPrice += item.price;
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${item.name}</td>
+          <td>$${item.price.toFixed(2)}</td>
+          <td><button onclick="removeItem(${index})">Remove</button></td>
+        `;
+        cartItems.appendChild(row);
+      });
+
+      totalPriceElement.innerText = `Total Price: $${totalPrice.toFixed(2)}`;
+    }
+
+    function removeItem(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      loadCart();
+    }
+
+    document.getElementById('paymentForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const cardName = document.getElementById('cardName').value.trim();
+      const cardNumber = document.getElementById('cardNumber').value.replace(/\s+/g, '');
+      const expiryDate = document.getElementById('expiryDate').value.trim();
+      const cvv = document.getElementById('cvv').value.trim();
+
+      if (validateCardDetails(cardName, cardNumber, expiryDate, cvv)) {
+        showNotification('Payment successful! Thank you for your purchase.');
+        localStorage.removeItem('cart'); // Clear the cart
+        loadCart(); // Refresh the cart view
+      } else {
+        showNotification('Invalid payment details. Please check and try again.');
+      }
+    });
+
+    function validateCardDetails(name, number, expiry, cvv) {
+      const validName = name.length > 0;
+      const validNumber = /^[0-9]{16}$/.test(number);
+      const validExpiry = /^(0[1-9]|1[0-2])\/\d{2}$/.test(expiry);
+      const validCVV = /^[0-9]{3}$/.test(cvv);
+
+      return validName && validNumber && validExpiry && validCVV;
+    }
+
+    function showNotification(message) {
+      const notification = document.createElement('div');
+      notification.innerText = message;
+      notification.style.position = 'fixed';
+      notification.style.bottom = '20px';
+      notification.style.right = '20px';
+      notification.style.padding = '10px 20px';
+      notification.style.backgroundColor = '#007bff';
+      notification.style.color = '#fff';
+      notification.style.borderRadius = '5px';
+      notification.style.boxShadow = '0 2px 5px rgba(0,0,0,0.3)';
+      notification.style.zIndex = '1000';
+      document.body.appendChild(notification);
+
+      setTimeout(() => {
+        document.body.removeChild(notification);
+      }, 3000);
+    }
+
+    window.onload = loadCart;
+  </script>
+</body>
+</html>
